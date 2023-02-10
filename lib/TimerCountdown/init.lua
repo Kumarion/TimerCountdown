@@ -3,17 +3,15 @@ local Signal = require(script.Signal);
 local SleitnickTimer = require(script.Timer);
 
 --[=[
-	@class TimerCountdown
-
     The TimerCountdown class that returns a new TimerCountdown object with functions to create timers and countdowns.
+    @class TimerCountdown
 ]=]
 local TimerCountdown = {};
 TimerCountdown.__index = TimerCountdown;
 
 --[=[
-	@return TimerCountdown
-	
-	Creates a new timer object.
+    Creates a new timer object.
+    @return TimerCountdown
 ]=]
 function TimerCountdown.new()
     local self = setmetatable({}, TimerCountdown);
@@ -22,19 +20,17 @@ function TimerCountdown.new()
 end
 
 --[=[
-	@param countdownName string
+    Uses Sleitnicks Timer module to create a ``Simple`` timer that counts down from ``start`` to 0.
+    Returns a signal that fires when the countdown is finished.
+
+    If ``stopAtZero`` is true, the countdown will stop at 0. If it is false, the countdown will stop at 1.
+    Countdown is automatically disconnected at the end of the countdown.
+
+    @param countdownName string
     @param start number
     @param interval number
     @param updateFn function
     @param stopAtZero boolean
-
-	Uses Sleitnicks Timer module to create a ``Simple`` timer that counts down from ``start`` to 0.
-    Returns a signal that fires when the countdown is finished.
-
-    If ``stopAtZero`` is true, the countdown will stop at 0. If it is false, the countdown will stop at 1.
-
-    Countdown is automatically disconnected at the end of the countdown.
-
     @return Signal
 ]=]
 function TimerCountdown:Countdown(countdownName, start, interval, updateFn, stopAtZero)
@@ -64,7 +60,6 @@ end
 
     Uses Sleitnicks Timer module to create a ``Simple`` timer that counts up from 0 to ``endT``.
     Returns a signal that fires when the timer is finished.
-
     Timer is automatically disconnected at the end of the timer.
     
     @return Signal
@@ -98,4 +93,4 @@ function TimerCountdown:Destroy(name)
     end;
 end
 
-return TimerCountdown;
+return table.freeze(TimerCountdown);
