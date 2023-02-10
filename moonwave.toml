@@ -15,6 +15,14 @@ url = "https://kumarion.github.io"
 baseUrl = "/TimerCountdown/"
 tagline = "A wrapper for Sleitnick's Timer module that includes more specific methods."
 
+[[classOrder]]
+section = "Main"
+classes = ["TimerCountdown"]
+
+[[classOrder]]
+section = "Util"
+classes = ["Timer", "Signal"]
+
 [footer]
 style = "dark"
 copyright = "Copyright © 2023 Kumarion. Built with Moonwave and Docusaurus"
