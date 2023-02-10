@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[698],{63891:s=>{s.exports=JSON.parse('{"sourceUrl":"https://github.com/Kumarion/TimerCountdown/blob/main","baseUrl":"/TimerCountdown/","classOrder":[{"section":"Main","classes":["TimerCountdown"]},{"section":"Util","classes":["Timer","Signal"]}],"apiCategories":[]}')}}]);
