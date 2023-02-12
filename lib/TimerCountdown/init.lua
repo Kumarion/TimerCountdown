@@ -85,12 +85,30 @@ end
     @param name string
     Destroys the timer/countdown with the name ``name``.
 ]=]
-function TimerCountdown:Destroy(name)
+function TimerCountdown:DestroyWithName(name)
     local cn = self._timers[name];
     if (cn) then
         cn:Disconnect();
         self._timers[name] = nil;
     end;
+end
+
+--[=[
+    Destroys all timers/countdowns.
+]=]
+function TimerCountdown:DestroyAll()
+    for _, cn in pairs(self._timers) do
+        cn:Disconnect();
+    end;
+    table.clear(self._timers);
+end
+
+--[=[
+    Destroys the TimerCountdown object.
+]=]
+function TimerCountdown:Destroy()
+    self:DestroyAll();
+    setmetatable(self, nil);
 end
 
 return table.freeze(TimerCountdown);
