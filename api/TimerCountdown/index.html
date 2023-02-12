@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="generator" content="Docusaurus v2.0.1">
 <title data-rh="true">TimerCountdown | TimerCountdown</title><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://Kumarion.github.io/TimerCountdown/api/TimerCountdown"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="TimerCountdown | TimerCountdown"><meta data-rh="true" name="description" content="The TimerCountdown class that returns a new TimerCountdown object with functions to create timers and countdowns."><meta data-rh="true" property="og:description" content="The TimerCountdown class that returns a new TimerCountdown object with functions to create timers and countdowns."><link data-rh="true" rel="canonical" href="https://Kumarion.github.io/TimerCountdown/api/TimerCountdown"><link data-rh="true" rel="alternate" href="https://Kumarion.github.io/TimerCountdown/api/TimerCountdown" hreflang="en"><link data-rh="true" rel="alternate" href="https://Kumarion.github.io/TimerCountdown/api/TimerCountdown" hreflang="x-default"><link rel="stylesheet" href="/TimerCountdown/assets/css/styles.3bbd961a.css">
-<link rel="preload" href="/TimerCountdown/assets/js/runtime~main.f8db9823.js" as="script">
-<link rel="preload" href="/TimerCountdown/assets/js/main.3eb796ed.js" as="script">
+<link rel="preload" href="/TimerCountdown/assets/js/runtime~main.06a76d41.js" as="script">
+<link rel="preload" href="/TimerCountdown/assets/js/main.39d9e352.js" as="script">
 </head>
 <body class="navigation-with-keyboard">
 <script>!function(){function e(e){document.documentElement.setAttribute("data-theme",e)}var t=function(){var e=null;try{e=localStorage.getItem("theme")}catch(e){}return e}();null!==t?e(t):window.matchMedia("(prefers-color-scheme: dark)").matches?e("dark"):(window.matchMedia("(prefers-color-scheme: light)").matches,e("light"))}()</script><div id="__docusaurus">
@@ -29,8 +29,12 @@
   Returns a signal that fires when the timer is finished.
   Timer is automatically disconnected at the end of the timer.
 </p>
-</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Destroy"><code style="text-decoration:none">Destroy</code><a class="hash-link" href="#Destroy" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Kumarion/TimerCountdown/blob/main/lib/TimerCountdown/init.lua#L88"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>TimerCountdown<!-- -->:</code><code class="green_DgR4">Destroy</code><code>(</code><code>name<!-- -->: </code><code class="blue_P4bS">string</code><code>) → </code><code>(</code><code>)</code></div><div>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="DestroyWithName"><code style="text-decoration:none">DestroyWithName</code><a class="hash-link" href="#DestroyWithName" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Kumarion/TimerCountdown/blob/main/lib/TimerCountdown/init.lua#L88"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>TimerCountdown<!-- -->:</code><code class="green_DgR4">DestroyWithName</code><code>(</code><code>name<!-- -->: </code><code class="blue_P4bS">string</code><code>) → </code><code>(</code><code>)</code></div><div>
 <p>Destroys the timer/countdown with the name <code>name</code>.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="DestroyAll"><code style="text-decoration:none">DestroyAll</code><a class="hash-link" href="#DestroyAll" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Kumarion/TimerCountdown/blob/main/lib/TimerCountdown/init.lua#L99"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>TimerCountdown<!-- -->:</code><code class="green_DgR4">DestroyAll</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Destroys all timers/countdowns.</p>
+</div><div class="divider_rE5g"></div><h3 class="anchor anchorWithStickyNavbar_LWe7" id="Destroy"><code style="text-decoration:none">Destroy</code><a class="hash-link" href="#Destroy" title="Direct link to heading">​</a></h3><div class="repositoryDetailsContainer_BPdw"><a class="sourceButton_sEho" href="https://github.com/Kumarion/TimerCountdown/blob/main/lib/TimerCountdown/init.lua#L109"><div class="sourceButtonText_Vh0m">&lt;/&gt;</div></a></div><div class="memberString_GwaU"><code>TimerCountdown<!-- -->:</code><code class="green_DgR4">Destroy</code><code>(</code><code>) → </code><code>(</code><code>)</code></div><div>
+<p>Destroys the TimerCountdown object.</p>
 </div></div></article></div><details><summary>Show raw api</summary><pre style="max-width:100%;white-space:pre-wrap">{
     &quot;functions&quot;: [
         {
@@ -129,7 +133,7 @@
             }
         },
         {
-            &quot;name&quot;: &quot;Destroy&quot;,
+            &quot;name&quot;: &quot;DestroyWithName&quot;,
             &quot;desc&quot;: &quot;Destroys the timer/countdown with the name ``name``.&quot;,
             &quot;params&quot;: [
                 {
@@ -144,6 +148,28 @@
                 &quot;line&quot;: 88,
                 &quot;path&quot;: &quot;lib/TimerCountdown/init.lua&quot;
             }
+        },
+        {
+            &quot;name&quot;: &quot;DestroyAll&quot;,
+            &quot;desc&quot;: &quot;Destroys all timers/countdowns.&quot;,
+            &quot;params&quot;: [],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 99,
+                &quot;path&quot;: &quot;lib/TimerCountdown/init.lua&quot;
+            }
+        },
+        {
+            &quot;name&quot;: &quot;Destroy&quot;,
+            &quot;desc&quot;: &quot;Destroys the TimerCountdown object.&quot;,
+            &quot;params&quot;: [],
+            &quot;returns&quot;: [],
+            &quot;function_type&quot;: &quot;method&quot;,
+            &quot;source&quot;: {
+                &quot;line&quot;: 109,
+                &quot;path&quot;: &quot;lib/TimerCountdown/init.lua&quot;
+            }
         }
     ],
     &quot;properties&quot;: [],
@@ -154,8 +180,8 @@
         &quot;line&quot;: 9,
         &quot;path&quot;: &quot;lib/TimerCountdown/init.lua&quot;
     }
-}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#Countdown" class="table-of-contents__link toc-highlight">:Countdown</a></li><li><a href="#Destroy" class="table-of-contents__link toc-highlight">:Destroy</a></li><li><a href="#Timer" class="table-of-contents__link toc-highlight">:Timer</a></li><li><a href="#new" class="table-of-contents__link toc-highlight">.new</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 Kumarion. Built with Moonwave and Docusaurus</div></div></div></footer></div>
-<script src="/TimerCountdown/assets/js/runtime~main.f8db9823.js"></script>
-<script src="/TimerCountdown/assets/js/main.3eb796ed.js"></script>
+}</pre></details></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#types" class="table-of-contents__link toc-highlight">Types</a></li><li><a href="#properties" class="table-of-contents__link toc-highlight">Properties</a></li><li><a href="#functions" class="table-of-contents__link toc-highlight">Functions</a><ul><li><a href="#Countdown" class="table-of-contents__link toc-highlight">:Countdown</a></li><li><a href="#Destroy" class="table-of-contents__link toc-highlight">:Destroy</a></li><li><a href="#DestroyAll" class="table-of-contents__link toc-highlight">:DestroyAll</a></li><li><a href="#DestroyWithName" class="table-of-contents__link toc-highlight">:DestroyWithName</a></li><li><a href="#Timer" class="table-of-contents__link toc-highlight">:Timer</a></li><li><a href="#new" class="table-of-contents__link toc-highlight">.new</a></li></ul></li></ul></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2023 Kumarion. Built with Moonwave and Docusaurus</div></div></div></footer></div>
+<script src="/TimerCountdown/assets/js/runtime~main.06a76d41.js"></script>
+<script src="/TimerCountdown/assets/js/main.39d9e352.js"></script>
 </body>
 </html>
