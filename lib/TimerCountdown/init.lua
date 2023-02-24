@@ -16,6 +16,7 @@ TimerCountdown.__index = TimerCountdown;
 function TimerCountdown.new()
     local self = setmetatable({}, TimerCountdown);
     self._timers = {};
+    self._countdowns = {};
     return self;
 end
 
@@ -37,6 +38,11 @@ function TimerCountdown:Countdown(countdownName, start, interval, updateFn, stop
     local finished = Signal.new();
     local currTime = start;
 
+    --// Check for current one with same name
+    if (self._countdowns[countdownName]) then
+        self._countdowns[countdownName]:Disconnect();
+    end;
+
     local cn
     cn = SleitnickTimer.Simple(interval, function()
         updateFn(currTime);
@@ -48,7 +54,7 @@ function TimerCountdown:Countdown(countdownName, start, interval, updateFn, stop
         end;
     end, true);
 
-    self._timers[countdownName] = cn;
+    self._countdowns[countdownName] = cn;
     return finished;
 end
 
@@ -67,6 +73,12 @@ end
 function TimerCountdown:Timer(timerName, endT, interval, updateFn)
     local finished = Signal.new();
     local currTime = 0;
+
+    --// Check for current one with same name
+    if (self._timers[timerName]) then
+        self._timers[timerName]:Disconnect();
+    end;
+
     local cn
     cn = SleitnickTimer.Simple(interval, function()
         updateFn(currTime);
@@ -86,10 +98,13 @@ end
     Destroys the timer/countdown with the name ``name``.
 ]=]
 function TimerCountdown:DestroyWithName(name)
-    local cn = self._timers[name];
-    if (cn) then
-        cn:Disconnect();
+    if (self._timers[name]) then
+        self._timers[name]:Disconnect();
         self._timers[name] = nil;
+    end;
+    if (self._countdowns[name]) then
+        self._countdowns[name]:Disconnect();
+        self._countdowns[name] = nil;
     end;
 end
 
@@ -100,7 +115,11 @@ function TimerCountdown:DestroyAll()
     for _, cn in pairs(self._timers) do
         cn:Disconnect();
     end;
+    for _, cn in pairs(self._countdowns) do
+        cn:Disconnect();
+    end;
     table.clear(self._timers);
+    table.clear(self._countdowns);
 end
 
 --[=[
